@@ -1,20 +1,27 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Cicada from '../images/Cicada.jpg';
+import '../CSS/NavBar.css';
+
+//client Side Routing
+import {
+    Link
+} from "react-router-dom";
 
 function NavBar(){
     return(
         <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand href="#home"><img src={Cicada} width="30" height="30"/> CicadaSavings</Navbar.Brand>
+            <Navbar.Brand href="/"><img src={Cicada} width="30" height="30" alt="logo"/> CicadaSavings</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="#home">Checking</Nav.Link>
-                <Nav.Link href="#link">Savings</Nav.Link>
+                <Nav.Link href="/checkings">Checking</Nav.Link>
+                <Nav.Link href="/savings">Savings</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -22,6 +29,9 @@ function NavBar(){
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
+                <Link to="/login">
+                <Button className="buttons" variant="primary">Log In</Button>
+                </Link>
             </Nav>
             </Navbar.Collapse>
         </Container>
