@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import NavBar from './components/NavBar';
 import Container from 'react-bootstrap/Container';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import Login from './components/Login';
+import MainContent1 from './components/MainContent1';
 import Checkings from './containers/Checkings';
 import Savings from './containers/Savings';
 
@@ -23,10 +25,11 @@ class App extends Component {
           <Route exact path="/login" component={() => <Login />} />
           <Route exact path="/checkings" component={() => <Checkings />} />
           <Route exact path="/savings" component={() => <Savings />} />
-          <Route path="/" render={() => <h1>Hello world</h1>} />
+          <Route path="/" render={() => <MainContent1 />} />
           </Switch>
         </Router>
       </div>
+      <Footer />
       </Container>
     );
   }
