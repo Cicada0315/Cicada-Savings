@@ -1,17 +1,9 @@
 import React from 'react'
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
 import Cicada from '../images/Cicada.jpg';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import '../CSS/NavBar.css';
 
-//client Side Routing
-import {
-    Link
-} from "react-router-dom";
-
-function NavBar(){
+const NavBar=()=>{
     return(
         <Navbar bg="light" expand="lg">
         <Container>
@@ -21,10 +13,7 @@ function NavBar(){
             <Nav className="me-auto">
                 <Nav.Link href="/checkings">Checking</Nav.Link>
                 <Nav.Link href="/savings">Savings</Nav.Link>
-                
-                <Link to="/login">
-                <Button className="buttons" variant="primary">Log In</Button>
-                </Link>
+                <Nav.Link href="/login"><Button className="buttons" variant="primary">Log In</Button></Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>
