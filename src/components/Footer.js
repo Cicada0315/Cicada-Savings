@@ -2,7 +2,7 @@ import React from 'react'
 import Dev from '../images/Dev.png';
 import githubIcon from '../images/githubIcon.png';
 
-function Footer(){
+const Footer=()=>{
     return(
         <footer className="bg-light text-center text-lg-start">
             <div className="text-center p-3" id="copyright">
