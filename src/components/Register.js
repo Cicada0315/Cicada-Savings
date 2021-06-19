@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import '../CSS/Register.css';
+import { connect } from 'react-redux';
+import {userPostFetch} from '../actions/sessions';
 
-class Register extends React.Component {
+
+class Register extends Component {
   state = {
     firstname: '',
     lastname: '',
@@ -10,15 +13,40 @@ class Register extends React.Component {
     password: ''
   };
 
-  handleSubmitLogin = (e) => {
-    e.preventDefault();
-  };
-
   handleonChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
+
+  handleSubmitLogin = (e) => {
+    e.preventDefault();
+    this.props.userPostFetch(this.state)
+    /*const {
+      firstname,
+      lastname,
+      username,
+      password
+    } = this.state;
+    
+    //add user to backend
+    Axios.post("http://127.0.0.1:3001/users", {
+      user: {
+        firstname: firstname,
+        lastname: lastname,
+        username: username,
+        password: password
+      }
+    })
+    .then(resp=> {
+      <Redirect to="/" />
+    })
+    .catch(error=>{
+      console.log(error);
+    })*/
+  };
+
+  
 
   render() {
     return (
@@ -45,12 +73,7 @@ class Register extends React.Component {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleonChange} />
                     </Form.Group>
-
-                    <Form.Group controlId="confirmpassword">
-                    <Form.Label>Confirm password</Form.Label>
-                    <Form.Control type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={this.handleonChange} />
-                    </Form.Group>
-                    
+      
                     <Button variant="primary" type="submit">Register</Button>
                 </Form>
             </div>
@@ -59,4 +82,8 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+const mapDispatchToProps = dispatch => ({
+  userPostFetch: user => dispatch(userPostFetch(user))
+})
+
+export default connect(null, mapDispatchToProps)(Register);
