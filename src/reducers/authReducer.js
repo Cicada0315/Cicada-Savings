@@ -4,9 +4,8 @@ const authReducer = (state = {currentUser: {}}, action) => {
         localStorage.setItem('userinfo', JSON.stringify({ ...action.data }));
         return { ...state, currentUser: action.data}
       case 'SIGN_OUT':
+        localStorage.clear();
         return {...state, currentUser: {}}
-      case 'ADD_ACCOUNT':
-        return {...state, currentUser: {...state.currentUser, account: action.payload}}
       default:
         return state;
     }

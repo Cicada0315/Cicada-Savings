@@ -44,9 +44,3 @@ export const signin = (user, history) => {
     .catch (error=>console.log(error));   
   } 
 };
-
-export const LoggingOut = () => {
-  return (dispatch) => {
-    dispatch({ type: "SIGN_OUT" });
-  };
-};
