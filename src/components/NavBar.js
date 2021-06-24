@@ -16,7 +16,7 @@ const NavBar=()=>{
 
                 <Nav>
                     <Navbar.Text>
-                    <Nav.Link href="/login"><Button className="buttons" variant="primary">Log In</Button></Nav.Link>
+                    <Nav.Link href="/login"><Button variant="primary">Log In</Button></Nav.Link>
                     </Navbar.Text>
                 </Nav>
             </Navbar.Collapse>
