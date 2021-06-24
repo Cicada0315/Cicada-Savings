@@ -6,6 +6,7 @@ import fdic from '../images/fdic.svg';
 import { Card, Button, CardGroup, Row, Col } from 'react-bootstrap';
 
 const Checkings=(props)=>{
+    const currentUser=false;
     return (
         <div>
             <Card className="text-dark">
@@ -18,7 +19,8 @@ const Checkings=(props)=>{
                         <Card.Text>
                         Why don't you start today?
                         </Card.Text>
-                        <Button variant="primary">Open Account</Button>
+                        {currentUser? (<a href="/checking/new"><Button variant="primary">Open Account</Button></a>): 
+                        (<a href="/login"><Button variant="primary">Open Account</Button></a>)}
                     </Card.Body>
                     </Card>
                 </Card.ImgOverlay>

@@ -4,8 +4,7 @@ import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 
 const NavBar=()=>{
     return(
-        <Container>
-            <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg">
             <Navbar.Brand href="/"><img src={Cicada} width="30" height="30" alt="logo"/> CicadaSavings</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -20,8 +19,7 @@ const NavBar=()=>{
                     </Navbar.Text>
                 </Nav>
             </Navbar.Collapse>
-            </Navbar> 
-        </Container>   
+        </Navbar>   
     )
 }
 
