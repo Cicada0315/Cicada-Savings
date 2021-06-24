@@ -1,6 +1,6 @@
 import React from 'react'
 import Cicada from '../images/Cicada.jpg';
-import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 
 const NavBar=()=>{
     return(

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API = axios.create({ baseURL: 'http://127.0.0.1:3001' });
 
-export const userPostFetch = (user) => {
+export const signup = (user, history) => {
   return dispatch =>{
     return API.post('/users', {
       user: {
@@ -20,13 +20,14 @@ export const userPostFetch = (user) => {
       }
       else{
         dispatch({ type: 'LOG_IN', data });
+        history.push('/');
       }
     })
     .catch (error=>console.log(error));   
   } 
 };
 
-export const userLoginFetch = (user) => {
+export const signin = (user, history) => {
   return dispatch =>{
     return API.post('/login', {
       user: {
@@ -38,6 +39,7 @@ export const userLoginFetch = (user) => {
       console.log(res)
       const {data}=res;
       dispatch({ type: 'LOG_IN', data });
+      history.push('/');
     })
     .catch (error=>console.log(error));   
   } 
