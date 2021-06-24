@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import family1 from '../images/family1.jpg';
 
-import '../CSS/MainContent1.css';
-
 const MainContent=()=>{
     const [infocards, setInfocards] = useState([]);
     useEffect(()=>{
@@ -40,7 +38,6 @@ const MainContent=()=>{
             </Card>
             <br/>
             <CardGroup>
-                {console.log(infocards)}
                 {infocards.map(infocard=> <Infocard key={infocard.id} infocard={infocard}/>)}
             </CardGroup>
         </div>

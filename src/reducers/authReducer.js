@@ -1,9 +1,12 @@
 const authReducer = (state = {currentUser: {}}, action) => {
     switch (action.type) {
       case 'LOG_IN':
-        return {...state, currentUser: action.payload}
+        localStorage.setItem('userinfo', JSON.stringify({ ...action.data }));
+        return { ...state, currentUser: action.data}
       case 'SIGN_OUT':
-        return {};
+        return {...state, currentUser: {}}
+      case 'ADD_ACCOUNT':
+        return {...state, currentUser: {...state.currentUser, account: action.payload}}
       default:
         return state;
     }

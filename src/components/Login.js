@@ -1,7 +1,8 @@
 import React from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../CSS/Login.css';
+import { connect } from 'react-redux';
+import { userLoginFetch } from '../actions/sessions';
 
 class Login extends React.Component {
   state = {
@@ -11,6 +12,7 @@ class Login extends React.Component {
 
   handleSubmitLogin = (e) => {
     e.preventDefault();
+    this.props.userLoginFetch(this.state)
   };
 
   handleonChange = (e) => {
@@ -46,4 +48,8 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+  userLoginFetch: user => dispatch(userLoginFetch(user))
+})
+
+export default connect(null, mapDispatchToProps)(Login);

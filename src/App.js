@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -15,26 +15,22 @@ import {
 } from "react-router-dom";
 
 
-class App extends Component {
-  render() {
-    return (
-      <Container>
-        <div className="App">
-          <Router>
-            <NavBar />
-            <Switch>
-            <Route exact path="/login" component={() => <Login />} />
-            <Route exact path="/checkings" component={() => <Checkings />} />
-            <Route exact path="/savings" component={() => <Savings />} />
-            <Route exact path="/register" component={() => <Register />} />
-            <Route path="/" render={() => <MainContent />} />
-            </Switch>
-          </Router>
-        </div>
-        <Footer />
-      </Container>
-    );
-  }
+const App=()=> {
+  return (
+    <Container>
+      <Router>
+        <NavBar />
+        <Switch>
+        <Route exact path="/login" component={() => <Login />} />
+        <Route exact path="/checkings" component={() => <Checkings />} />
+        <Route exact path="/savings" component={() => <Savings />} />
+        <Route exact path="/register" component={() => <Register />} />
+        <Route path="/" render={() => <MainContent />} />
+        </Switch>
+      </Router>
+      <Footer />
+    </Container>
+  ); 
 };
 
 export default App;

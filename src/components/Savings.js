@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Savings= () =>{
+const Savings=()=>{
     return <div>Savings Page</div>
 }
 

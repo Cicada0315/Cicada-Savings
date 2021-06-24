@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
-import '../CSS/Register.css';
 import { connect } from 'react-redux';
-import {userPostFetch} from '../actions/sessions';
-
+import { userPostFetch } from '../actions/sessions';
 
 class Register extends Component {
   state = {
@@ -22,31 +20,7 @@ class Register extends Component {
   handleSubmitLogin = (e) => {
     e.preventDefault();
     this.props.userPostFetch(this.state)
-    /*const {
-      firstname,
-      lastname,
-      username,
-      password
-    } = this.state;
-    
-    //add user to backend
-    Axios.post("http://127.0.0.1:3001/users", {
-      user: {
-        firstname: firstname,
-        lastname: lastname,
-        username: username,
-        password: password
-      }
-    })
-    .then(resp=> {
-      <Redirect to="/" />
-    })
-    .catch(error=>{
-      console.log(error);
-    })*/
   };
-
-  
 
   render() {
     return (

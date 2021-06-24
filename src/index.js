@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'; 
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; 
-import authReducer from "./reducers/authReducer";
+import { reducers } from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(authReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
